@@ -1,0 +1,48 @@
+$navbar-width: 250px;
+
+.navbar {
+  min-width: $navbar-width;
+  height: 100vh;
+  background-color: #e5e2e5;
+  padding: 1 rem;
+  position: fixed !important;
+  display: flex;
+  align-content: flex-start;
+}
+
+.navbar__logo-container {
+  img {
+    padding: 2.2rem;
+  }
+}
+
+.navbar__container {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: column;
+}
+
+.navbar__items {
+  a {
+    button {
+      width: 100%;
+    }
+  }
+  display: flex;
+  flex-flow: column;
+  button {
+    margin: 0.5rem 0;
+  }
+}
+
+.navbar__login-information {
+  display: flex;
+  flex-flow: column;
+  text-align: center;
+  margin-top: 2rem;
+  svg {
+    display: inline;
+    margin-right: 0.3rem;
+  }
+}
