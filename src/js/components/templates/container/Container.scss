@@ -3,10 +3,12 @@
     flex-flow: row;
     background-color: #F1EEF3;
 }
-
+.content{
+    width: 100%;
+}
 .content__container{
-    padding-left: 350px;
-    padding-right: 60px;
-    padding-top: 60px;
+    padding-left: 310px;
+    padding-top: 30px;
+    padding-right: 100px;
     padding-bottom: 60px;
 }
