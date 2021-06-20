@@ -1,10 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import { Heading, Container, Box, Text } from "@chakra-ui/react";
 import TelefonoCard from "../../cards/telefonoCard";
 import { Grid, GridItem } from "@chakra-ui/react";
 import Sells7Days from "../../charts/Sells7Days";
 
 const HomePage = () => {
+  const telefonosMasVendidos = useState([
+    {
+      id: 1,
+      telefono: "Redmi Note 9 Pro",
+      marca: "Xiaomi",
+      ventas: 2314,
+    },
+    {
+      id: 2,
+      telefono: "Iphone 12",
+      marca: "Apple",
+      ventas: 1242,
+    },
+    {
+      id: 3,
+      telefono: "Galaxy A30",
+      marca: "Samsung",
+      ventas: 1012,
+    },
+  ]);
+
   return (
     <div className="home">
       <Heading as="h2" size="xl" color="gray.700">
@@ -30,14 +51,10 @@ const HomePage = () => {
       <Heading as="h2" size="lg" className="my-4" color="gray.700">
         Celulares más vendidos
       </Heading>
-
       <Grid templateColumns="repeat(3, 1fr)" gap={6}>
-        <TelefonoCard />
-        <TelefonoCard />
-        <TelefonoCard />
-        <TelefonoCard />
-        <TelefonoCard />
-        <TelefonoCard />
+        {telefonosMasVendidos[0].map((telefono) => (
+          <TelefonoCard telefono={telefono} key={telefono.id} />
+        ))}
       </Grid>
     </div>
   );

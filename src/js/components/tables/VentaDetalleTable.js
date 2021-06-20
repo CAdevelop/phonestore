@@ -8,7 +8,30 @@ import {
   Th,
   Td,
   TableCaption,
+  Flex,
+  Button,
 } from "@chakra-ui/react";
+
+const detalleVenta = [
+  {
+    producto: "Redmi Note 8 Pro",
+    cantidad: 4,
+    total: 2500,
+    id: 1,
+  },
+  {
+    producto: "Redmi Note 8 Pro",
+    cantidad: 4,
+    total: 2500,
+    id: 2,
+  },
+  {
+    producto: "Redmi Note 8 Pro",
+    cantidad: 4,
+    total: 2500,
+    id: 3,
+  },
+];
 
 const VentaDetalleTable = () => {
   return (
@@ -16,27 +39,25 @@ const VentaDetalleTable = () => {
       <Table variant="striped" colorScheme="purple">
         <Thead>
           <Tr>
-            <Th>To convert</Th>
-            <Th>into</Th>
-            <Th isNumeric>multiply by</Th>
+            <Th>Producto</Th>
+            <Th>Cantidad</Th>
+            <Th isNumeric>Total</Th>
+            <Th isNumeric>Acciones</Th>
           </Tr>
         </Thead>
         <Tbody>
-          <Tr>
-            <Td>inches</Td>
-            <Td>millimetres (mm)</Td>
-            <Td isNumeric>25.4</Td>
-          </Tr>
-          <Tr>
-            <Td>feet</Td>
-            <Td>centimetres (cm)</Td>
-            <Td isNumeric>30.48</Td>
-          </Tr>
-          <Tr>
-            <Td>yards</Td>
-            <Td>metres (m)</Td>
-            <Td isNumeric>0.91444</Td>
-          </Tr>
+          {detalleVenta.map((detalle) => (
+            <Tr key={detalle.id}>
+              <Td>{detalle.producto}</Td>
+              <Td>{detalle.cantidad}</Td>
+              <Td isNumeric>{detalle.total}</Td>
+              <Td isNumeric>
+                <Button size="sm" colorScheme="red">
+                  Eliminar
+                </Button>
+              </Td>
+            </Tr>
+          ))}
         </Tbody>
       </Table>
     </div>

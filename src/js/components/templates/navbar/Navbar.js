@@ -11,7 +11,7 @@ import {
   FiSliders,
   FiUser,
   FiLogOut,
-  FiClipboard
+  FiClipboard,
 } from "react-icons/fi";
 
 import { Link, useLocation } from "react-router-dom";
@@ -67,16 +67,6 @@ const Navbar = () => {
               leftIcon={<FiUsers />}
             >
               Usuarios
-            </Button>
-          </Link>
-
-          <Link to="/ajustes">
-            <Button
-              colorScheme={location.pathname === "/ajustes" ? "purple" : "gray"}
-              variant="outline"
-              leftIcon={<FiClipboard />}
-            >
-              Reportes
             </Button>
           </Link>
         </div>

@@ -15,7 +15,7 @@ import {
   NumberInput,
   NumberInputField,
   NumberIncrementStepper,
-  NumberDecrementStepper
+  NumberDecrementStepper,
 } from "@chakra-ui/react";
 import VentaDetalleTable from "../../../tables/VentaDetalleTable";
 
@@ -34,18 +34,18 @@ function RealizarVentaTab() {
 
         <FormControl id="Producto">
           <FormLabel>Unidades a vender:</FormLabel>
-          <NumberInput max={64} min={1} variant="flushed" focusBorderColor="purple.500">
-            <NumberInputField/>
+          <NumberInput
+            max={64}
+            min={1}
+            variant="flushed"
+            focusBorderColor="purple.500"
+          >
+            <NumberInputField />
             <NumberInputStepper>
-              <NumberIncrementStepper/>
-              <NumberDecrementStepper/>
+              <NumberIncrementStepper />
+              <NumberDecrementStepper />
             </NumberInputStepper>
           </NumberInput>
-        </FormControl>
-
-        <FormControl id="Producto">
-          <FormLabel>Nombre del cliente:</FormLabel>
-          <Input type="text" variant="flushed" focusBorderColor="purple.500" />
         </FormControl>
       </Grid>
 
@@ -59,30 +59,51 @@ function RealizarVentaTab() {
 
       <VentaDetalleTable />
 
-      <Grid templateColumns="repeat(3, 1fr)" gap={6} className="mt-5">
-        <FormControl id="text">
-          <FormLabel>Descuento: </FormLabel>
-          <Input type="text" variant="flushed" focusBorderColor="purple.500" />
-        </FormControl>
-        <FormControl id="text">
-          <FormLabel>Observaciones: </FormLabel>
-          <Textarea variant="flushed" focusBorderColor="purple.500" />
-        </FormControl>
+      <Grid templateColumns="repeat(2, 1fr)" gap={6} className="mt-5">
         <div>
-          <Text className="xl">SubTotal:</Text>
-          <Heading size="md" color="green.600">
-            $ 12,123
-          </Heading>
-          <Text className="xl">Total:</Text>
-          <Heading size="md" color="green.600">
-            $ 12,123
-          </Heading>
+          <Grid templateColumns="repeat(2, 1fr)" gap={6}>
+            <FormControl id="Producto">
+              <FormLabel>Nombre del cliente:</FormLabel>
+              <Input
+                type="text"
+                variant="flushed"
+                focusBorderColor="purple.500"
+              />
+            </FormControl>
+            <FormControl id="text">
+              <FormLabel>Descuento: </FormLabel>
+              <Input
+                type="text"
+                variant="flushed"
+                focusBorderColor="purple.500"
+              />
+            </FormControl>
+          </Grid>
+          <FormControl id="text" className="mt-2">
+            <FormLabel>Observaciones: </FormLabel>
+            <Textarea variant="flushed" focusBorderColor="purple.500" />
+          </FormControl>
         </div>
+        <Flex>
+          <Spacer />
+          <div className="my-auto">
+            <Text size="xl">SubTotal:</Text>
+            <Heading size="md" color="green.600">
+              $ 12,123
+            </Heading>
+            <Text size="xl">Total:</Text>
+            <Heading size="md" color="green.600">
+              $ 12,123
+            </Heading>
+          </div>
+        </Flex>
       </Grid>
 
-      <Flex className="my-3">
+      <Flex>
         <Spacer />
-        <Button colorScheme="purple">Realizar Venta</Button>
+        <Button colorScheme="purple" size="lg">
+          Realizar Venta
+        </Button>
       </Flex>
     </React.Fragment>
   );

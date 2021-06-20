@@ -16,26 +16,18 @@ const HistorialVentaTable = () => {
       <Table variant="striped" colorScheme="purple" className="mt-5">
         <Thead>
           <Tr>
-            <Th>To convert</Th>
-            <Th>into</Th>
-            <Th isNumeric>multiply by</Th>
+            <Th>Fecha de la venta</Th>
+            <Th>Vendedor</Th>
+            <Th>Observaciones</Th>
+            <Th isNumeric>Monto total</Th>
           </Tr>
         </Thead>
         <Tbody>
           <Tr>
-            <Td>inches</Td>
-            <Td>millimetres (mm)</Td>
-            <Td isNumeric>25.4</Td>
-          </Tr>
-          <Tr>
-            <Td>feet</Td>
-            <Td>centimetres (cm)</Td>
-            <Td isNumeric>30.48</Td>
-          </Tr>
-          <Tr>
-            <Td>yards</Td>
-            <Td>metres (m)</Td>
-            <Td isNumeric>0.91444</Td>
+            <Td>17/6/2021</Td>
+            <Td>Carlos Arcia</Td>
+            <Td>Observaciones</Td>
+            <Td isNumeric>$ 254.4</Td>
           </Tr>
         </Tbody>
       </Table>
